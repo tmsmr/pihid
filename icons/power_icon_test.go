@@ -6,7 +6,7 @@ import (
 
 import "github.com/fogleman/gg"
 
-func TestDrawIcon(t *testing.T) {
+func TestDrawPowerIcon(t *testing.T) {
 	dc := gg.NewContext(128, 128)
 	dx := 32
 	dy := 32
@@ -19,7 +19,7 @@ func TestDrawIcon(t *testing.T) {
 			}
 		}
 	}
-	err := dc.SavePNG("power_test.png")
+	err := dc.SavePNG("power_icon.png")
 	if err != nil {
 		panic(err)
 	}
