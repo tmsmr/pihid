@@ -23,10 +23,10 @@ with Image(filename=fname, background=Color('transparent')) as svg:
     for res in values:
         with svg.clone() as img:
             img.resize(res, res)
-            pixels = []
-            for x in range(res):
-                for y in range(res):
-                    pixels.append(img[x, y].alpha_int8)
-            values[res] = ", ".join(str(a) for a in pixels)
+            alphas = []
+            for y in range(res):
+                for x in range(res):
+                    alphas.append(img[x,y].alpha_int8)
+            values[res] = ", ".join(str(a) for a in alphas)
 
 print(t.substitute(name=name, values_16=values[16], values_32=values[32], values_64=values[64]))

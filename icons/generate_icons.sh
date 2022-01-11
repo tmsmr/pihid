@@ -12,7 +12,7 @@ solid/bolt.svg,Performance,performance.go
 "
 
 git submodule update --init
-docker build --pull -t gen-icon-src ./generator
+docker build --pull -t gen-icon-src .
 
 for line in $ICONS; do
   IFS=, read -r -a icon <<< "$line"
